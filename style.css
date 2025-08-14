@@ -27,6 +27,7 @@ body {
 }
 
 /* --- Header Section --- */
+
 .header {
   padding: 64px 0;
   border-bottom: 2px solid var(--border-color);
@@ -39,7 +40,11 @@ body {
   justify-content: space-between;
   gap: 32px;
 }
-
+#header-info {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
 .header-content {
   display: flex;
   flex-direction: column;
@@ -49,8 +54,8 @@ body {
 }
 
 .header-photo {
-  width: 128px;
-  height: 128px;
+  /*width: 128px;*/
+  height: 300px;
   object-fit: cover;
   border: 2px solid var(--border-color);
 }
