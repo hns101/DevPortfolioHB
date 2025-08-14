@@ -363,6 +363,10 @@ body {
   background-color: var(--bg-gray);
 }
 
+.waving-hand  {
+  font-size: 5rem;
+
+}
 /* --- Responsive Design --- */
 @media (min-width: 768px) {
   .header .container {
