@@ -110,6 +110,7 @@ body {
 /* --- General Section Styling --- */
 .section {
   padding: 80px 0;
+  padding-top: 20px;
   border-bottom: 2px solid var(--border-color);
 }
 
@@ -132,13 +133,37 @@ body {
 
 .about-description {
   font-size: 1.125rem;
-  line-height: 1.75;
+  line-height: 1.50;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.about-description-intro {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.about-photo {
+  height: 300px;
+  border: 3px solid var(--border-color);
+  align-self: flex-start;
+}
+.about-text {
+  margin-top:-6px;
+}
+.about-text-intro {
+  margin-bottom: -4px;
 }
 
 .github-title, .toolbox-title {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 24px;
+}
+.github-title {
+  margin-top: 0;
 }
 
 .github-chart-container {
@@ -250,6 +275,7 @@ body {
   background-color: var(--text-black);
   color: var(--bg-white);
 }
+
 
 /* --- Footer / Contact Section --- */
 .footer {
