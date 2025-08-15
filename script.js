@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('project-modal');
     const modalCloseButton = document.getElementById('modal-close');
 
+    // Store the GitHub SVG icon markup in a constant for reuse
+    const githubIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>`;
+
     // Function to open the modal and populate it with data
     const openModal = (card) => {
         // Get data from the card's data attributes
@@ -10,14 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const images = card.dataset.images.split(',');
         const description = card.dataset.description;
         const tech = card.dataset.tech.split(',');
-        const liveUrl = card.dataset.liveUrl;
-        const githubUrl = card.dataset.githubUrl;
 
-        // Populate the modal elements
+        // Data for the links
+        const liveUrl = card.dataset.liveUrl;
+        const liveText = card.dataset.liveText || 'Live Demo'; // Default text is 'Live Demo'
+        const githubUrl = card.dataset.githubUrl;
+        const githubUrlFrontend = card.dataset.githubUrlFrontend;
+        const githubUrlBackend = card.dataset.githubUrlBackend;
+
+        // Populate the static modal elements
         document.getElementById('modal-title').textContent = title;
         document.getElementById('modal-description').textContent = description;
-        document.getElementById('modal-live-link').href = liveUrl;
-        document.getElementById('modal-github-link').href = githubUrl;
 
         // Create and append gallery images
         const galleryContainer = document.getElementById('modal-gallery');
@@ -38,6 +44,51 @@ document.addEventListener('DOMContentLoaded', () => {
             tag.textContent = techName.trim();
             techStackContainer.appendChild(tag);
         });
+
+        // Dynamically create the link buttons
+        const linksContainer = document.getElementById('modal-links-container');
+        linksContainer.innerHTML = ''; // Clear previous links
+
+        // 1. Create the Live Demo / Visit Website button
+        if (liveUrl) {
+            const liveLink = document.createElement('a');
+            liveLink.href = liveUrl;
+            liveLink.target = '_blank';
+            liveLink.rel = 'noopener noreferrer';
+            liveLink.className = 'modal-link primary';
+            liveLink.textContent = liveText;
+            linksContainer.appendChild(liveLink);
+        }
+
+        // 2. Create the GitHub Repo button(s)
+        if (githubUrlFrontend && githubUrlBackend) {
+            // Case for Project 1: Two repo links
+            const frontendLink = document.createElement('a');
+            frontendLink.href = githubUrlFrontend;
+            frontendLink.target = '_blank';
+            frontendLink.rel = 'noopener noreferrer';
+            frontendLink.className = 'modal-link secondary';
+            frontendLink.innerHTML = `${githubIconSvg} Frontend Repo`;
+            linksContainer.appendChild(frontendLink);
+
+            const backendLink = document.createElement('a');
+            backendLink.href = githubUrlBackend;
+            backendLink.target = '_blank';
+            backendLink.rel = 'noopener noreferrer';
+            backendLink.className = 'modal-link secondary';
+            backendLink.innerHTML = `${githubIconSvg} Backend Repo`;
+            linksContainer.appendChild(backendLink);
+
+        } else if (githubUrl) {
+            // Case for Projects 2 & 3: One repo link
+            const githubLink = document.createElement('a');
+            githubLink.href = githubUrl;
+            githubLink.target = '_blank';
+            githubLink.rel = 'noopener noreferrer';
+            githubLink.className = 'modal-link secondary';
+            githubLink.innerHTML = `${githubIconSvg} GitHub Repo`;
+            linksContainer.appendChild(githubLink);
+        }
 
         // Show the modal
         modal.classList.add('active');

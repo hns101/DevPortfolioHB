@@ -11,17 +11,16 @@
 <!-- Header -->
 <header class="header">
     <div class="container">
-        <div class="header-content" id="header-info">
+        <div class="header-content">
             <img src="./img/hansBGBW.png" alt="Hans" class="header-photo">
-            <div>
+            <div id="header-info">
                 <h1 class="header-title">Hello. I'm Hans<span class="waving-hand">👋</span></h1>
                 <p class="header-subtitle">Full-Stack Developer // Traditional Art Teacher</p>
             </div>
-            <a href="Hans%20Bregman%20CV%20-%202025%20-%20EN.pdf" download class="resume-button">
-            Download Resume
-            </a>
         </div>
-
+        <a href="Hans%20Bregman%20CV%20-%202025%20-%20EN.pdf" download class="resume-button">
+            Download Resume
+        </a>
     </div>
 </header>
 
@@ -33,21 +32,27 @@
             <div class="about-grid">
                 <div class="about-description">
                     <div class="about-description-intro">
-                        <img src="./img/schevephoto_smal.jpg" alt="Hans" class="about-photo">
+                        <img src="./img/schevephoto_smal.jpg" alt="Hans teaching" class="about-photo">
                         <p class="about-text-intro">A creative and entrepreneurial professional transitioning into tech,
                             holding a graphic design degree, art training from Florence, and a
                             recent full-stack development HBO function certificate.</p>
                     </div>
                     <p class="about-text">Alongside
                         my technical development, I also run a small business teaching
-                    art and now seeking a 32-hour junior developer role to build an
-                    ambitious IT career, combining my design expertise and coding
-                    knowledge to create beautiful, efficient user experiences. I am
-                    keen to bring this unique blend of creative and technical talent to
-                    an innovative team.</p>
+                        art and now seeking a 32-hour junior developer role to build an
+                        ambitious IT career, combining my design expertise and coding
+                        knowledge to create beautiful, efficient user experiences. I am
+                        keen to bring this unique blend of creative and technical talent to
+                        an innovative team.</p>
                 </div>
                 <div>
-                    <h3 class="github-title">My GitHub Activity</h3>
+                    <div class="section-subheader">
+                        <h3 class="github-title">My GitHub Activity</h3>
+                        <a href="https://github.com/hns101" target="_blank" rel="noopener noreferrer" class="github-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            View on GitHub
+                        </a>
+                    </div>
                     <div class="github-chart-container">
                         <img src="https://ghchart.rshah.org/000000/hns101" alt="GitHub Activity Chart"
                              class="github-chart"
@@ -71,10 +76,12 @@
                 <div class="project-card"
                      data-title="Art Class Management & Gallery App"
                      data-images="./img/lesplanning-SSP.png,./img/Admin-SSP.png"
-                     data-description="A full-stack web application for managing my art students and their classes, featuring a planning system and a gallery. Built with React and Spring Boot."
+                     data-description="A full-stack web application for managing my art students and their classes, featuring a planning system and a gallery. Built with React and Spring Boot. Deployed with Docker on a VPS"
                      data-tech="React,Spring Boot,Java,Javascript,PostgreSQL,JWT,Docker"
                      data-live-url="https://portaal.scheveschilder.nl/login"
-                     data-github-url="#">
+                     data-live-text="Visit Website"
+                     data-github-url-frontend="https://github.com/hns101/ScheveSchilderPortaal-Fontend"
+                     data-github-url-backend="https://github.com/hns101/ScheveSchilderPortaal-Backend">
                     <div class="project-card-header">
                         <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                         <span class="header-text">Scheve Schilder Portaal</span>
@@ -90,10 +97,10 @@
                 <div class="project-card"
                      data-title="PixelPub"
                      data-images="./img/pixelpub-logo.png,https://placehold.co/600x400/e5e7eb/000000?text=PixelPub+2"
-                     data-description="A real-time pixel art platform where users can chat and draw live on the same canvas using WebSockets. Built with a Flask backend."
+                     data-description="PixelPub is a dynamic, multi-user web application that provides a digital space for creating and sharing pixel art. The project has evolved from a simple drawing tool into a feature-rich social platform where users can collaborate in real-time. The core concept is the &quot;Pub,&quot; a dedicated space containing a shared canvas and an integrated chat room."
                      data-tech="Python,Flask,WebSocketIO,JavaScript"
                      data-live-url="https://pixelpub-cs50-final-project.onrender.com/login"
-                     data-github-url="#">
+                     data-github-url="https://github.com/hns101/PixelPub-CS50-Final-Project">
                     <div class="project-card-header">
                         <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                         <span class="header-text">pixelPub</span>
@@ -109,10 +116,11 @@
                 <div class="project-card"
                      data-title="Scheveschilder.nl"
                      data-images="./img/scheveschilderNL.png,./img/scheveschilderNLbottom.png"
-                     data-description="The official website for my art school, featuring class information and student galleries. Built with Next.js and Tailwind CSS for a modern, responsive design."
-                     data-tech="Next.js,React,Tailwind CSS"
+                     data-description="The official website for my traditional art school, featuring class information and student galleries. Built with Next.js and Tailwind CSS for a modern, responsive design."
+                     data-tech="Next.js,Tailwind CSS"
                      data-live-url="https://www.scheveschilder.nl"
-                     data-github-url="#">
+                     data-live-text="Visit Website"
+                     data-github-url="https://github.com/hns101/Scheve-Schilder-Website-Landingpage">
                     <div class="project-card-header">
                         <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                         <span class="header-text">scheveschilder.nl</span>
@@ -120,7 +128,7 @@
                     <img src="./img/scheveschilderNLtop.png" alt="Scheveschilder.nl">
                     <div class="project-card-content">
                         <h3>Scheveschilder.nl</h3>
-                        <p>Official website for my classical art school.</p>
+                        <p>Official website for my traditional art school.</p>
                         <button class="view-project-button">View Project</button>
                     </div>
                 </div>
@@ -133,12 +141,26 @@
 <footer id="contact" class="footer">
     <div class="container">
         <h2 class="footer-title">Get In Touch</h2>
+        <div class="contact-details">
+            <div class="contact-info">
+                <a href="mailto:hns101@live.nl" class="contact-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    Email
+                </a>
+                <p class="contact-text">hns101@live.nl</p>
+            </div>
+            <div class="contact-info">
+                <a href="https://wa.me/31610910012" class="contact-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Whatsapp
+                </a>
+                <p class="contact-text">+31 6 1091 0012</p>
+            </div>
+        </div>
         <div class="social-links">
-            <a href="mailto:hans.developer@example.com" class="footer-link">Email</a>
             <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
             <a href="https://github.com/hns101" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
         </div>
-        <p class="footer-copyright">Designed & Built by Hans &copy; 2024</p>
     </div>
 </footer>
 
@@ -156,9 +178,8 @@
             <p id="modal-description"></p>
             <h3 class="modal-section-title">Tech Stack</h3>
             <div id="modal-tech-stack" class="modal-tech-stack-container"></div>
-            <div class="modal-links">
-                <a id="modal-live-link" href="#" target="_blank" rel="noopener noreferrer" class="modal-link primary">Live Demo</a>
-                <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="modal-link secondary">GitHub Repo</a>
+            <div class="modal-links" id="modal-links-container">
+                <!-- Links will be dynamically inserted here by script.js -->
             </div>
         </div>
     </div>
